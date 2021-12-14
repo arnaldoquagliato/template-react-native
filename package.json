@@ -64,7 +64,8 @@
   "lint-staged": {
     "src/*.{ts,tsx}": [
       "yarn prettier:fix",
-      "yarn lint"
+      "yarn lint",
+      "git add"
     ],
     "*.{js,jsx,ts,tsx}": "eslint --cache --fix"
   }
