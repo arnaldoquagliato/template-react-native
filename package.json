@@ -9,7 +9,6 @@
     "test": "jest",
     "lint": "eslint src",
     "dev-android": "npx react-native run-android && npx react-native start",
-    "prepare": "husky install",
     "prettier:fix": "prettier --write",
     "prettier:check": "prettier --check"
   },
@@ -65,16 +64,11 @@
       "node"
     ]
   },
-  "lint-staged":{
-    "src/*.{ts, tsx}":[
+  "lint-staged": {
+    "src/*.{ts,tsx}": [
       "yarn prettier:fix",
       "yarn lint"
     ]
-  },
-  "husky":{
-    "hooks":{
-      "pre-commit": "npm test",
-      "pre-push": "npm teste"
-    }
   }
+ 
 }
