@@ -1,4 +1,10 @@
-import React from "react";
-import { Text } from "react-native";
+import React from 'react';
+import { Text, View } from 'react-native';
 
-export const Teste = () => <><Text>arbakdi</Text></>
+export function Teste() {
+  return (
+    <View>
+      <Text>arbakdi</Text>
+    </View>
+  );
+}
