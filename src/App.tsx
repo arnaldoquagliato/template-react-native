@@ -1,4 +1,4 @@
-                          import { Teste } from "./Teste";
+import { Teste } from "./Teste";
 
 import React from 'react';
 import {
@@ -44,7 +44,7 @@ const Section: React.FC<{
         ]}>
         {children}
       </Text>
-                      </View>
+    </View>
   );
 };
 

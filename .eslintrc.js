@@ -10,6 +10,19 @@ module.exports = {
       typescript: {},
     },
   },
+  extends: [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  plugins: [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "prettier"
+  ],
   rules: {
     'import/no-extraneous-dependencies': [2, { devDependencies: ['**/test.ts'] }],
     '@typescript-eslint/indent': [2, 2],
@@ -23,5 +36,21 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    "prettier/prettier": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-filename-extension": [ 1, {"extensions": [".tsx"]} ],
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
   },
+  settings: {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
 };
