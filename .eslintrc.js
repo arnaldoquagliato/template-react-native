@@ -1,67 +1,27 @@
 module.exports = {
-  root: true,
-  env: {
-    es2021: true,
-    es6: true
-  },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'airbnb-typescript',
-    'airbnb/hooks',
-    'prettier',
-    'plugin:@typescript-eslint/recommended',
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking"
-  ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-    __DEV__: 'readonly'
-  },
+  extends: ['airbnb-base', 'plugin:@typescript-eslint/recommended'],
   parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
+  plugins: ['@typescript-eslint', 'prettier'],
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts'],
     },
-    ecmaVersion: 2018,
-    sourceType: 'module',
-    project: './tsconfig.eslint.json'
+    'import/resolver': {
+      typescript: {},
+    },
   },
-  plugins: [
-    'react',
-    'prettier',
-    'eslint-plugin-import-helpers',
-    "@typescript-eslint"
-  ],
   rules: {
-    'prettier/prettier': 'error',
-    'react/jsx-filename-extension': [
-      'warn',
+    'import/no-extraneous-dependencies': [2, { devDependencies: ['**/test.ts'] }],
+    '@typescript-eslint/indent': [2, 2],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
       {
-        extensions: ['.jsx', '.js']
-      }
-    ],
-    'import/prefer-default-export': 'off',
-    'react/state-in-constructor': 'off',
-    'react/static-property-placement': 'off',
-    'react/jsx-props-no-spreading': 'off',
-    'react/prop-types': 'off',
-    'no-param-reassign': 'off',
-    'no-console': 'off',
-    "@typescript-eslint/rule-name": "error",
-    'import-helpers/order-imports': [
-      'warn',
-      {
-        newlinesBetween: 'always',
-        groups: [
-          'module',
-          '/^@shared/',
-          ['parent', 'sibling', 'index'],
-        ],
-        alphabetize: { order: 'asc', ignoreCase: true },
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
       },
-    ]
+    ],
   },
 };
