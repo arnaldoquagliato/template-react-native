@@ -1,4 +1,4 @@
-import { Teste } from "./Teste";
+                            import { Teste } from "./Teste";
 
 import React from 'react';
 import {
