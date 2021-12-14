@@ -7,7 +7,13 @@ module.exports = {
     'prettier',
     'plugin:@typescript-eslint/recommended',
   ],
-  plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
+  plugins: [
+    'react',
+    'react-hooks',
+    '@typescript-eslint',
+    'prettier',
+    'eslint-plugin-import-helpers',
+  ],
   ignorePatterns: ['metro.config.js', 'babel.config.js', 'index.js'],
   rules: {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
@@ -40,6 +46,15 @@ module.exports = {
     semi: ['error', 'always'],
     '@typescript-eslint/semi': 'off',
     'no-unexpected-multiline': 'error',
+    'import-helpers/order-imports': [
+      'warn',
+      {
+        // example configuration
+        newlinesBetween: 'always',
+        groups: ['module', '/^@shared/', ['parent', 'sibling', 'index']],
+        alphabetize: { order: 'asc', ignoreCase: true },
+      },
+    ],
   },
   settings: {
     'import/resolver': {
