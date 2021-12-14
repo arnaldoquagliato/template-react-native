@@ -1,4 +1,4 @@
-import { Teste } from "./Teste";
+                                                                  import { Teste } from "./Teste";
 
 import React from 'react';
 import {
@@ -30,7 +30,7 @@ const Section: React.FC<{
         style={[
           styles.sectionTitle,
           {
-            color: isDarkMode ? Colors.white : Colors.black,
+                                                       color: isDarkMode ? Colors.white : Colors.black,
           },
         ]}>
         testestestse

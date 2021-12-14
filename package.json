@@ -9,7 +9,9 @@
     "test": "jest",
     "lint": "eslint src",
     "dev-android": "npx react-native run-android && npx react-native start",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prettier:fix": "prettier --write",
+    "prettier:check": "prettier --check"
   },
   "dependencies": {
     "eslint-plugin-import-helpers": "^1.2.0",
@@ -61,6 +63,12 @@
       "jsx",
       "json",
       "node"
+    ]
+  },
+  "lint-staged":{
+    "src/*.{ts, tsx}":[
+      "yarn prettier:fix",
+      "yarn lint"
     ]
   },
   "husky":{
